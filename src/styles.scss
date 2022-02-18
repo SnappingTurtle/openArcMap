@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules//ol/ol.css";
+
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#basemap-tile-view {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    .material-icons {
+        &.xl {
+            font-size: 64px;
+        }
+        &.lg {
+            font-size: 48px;
+            &.v-flat {
+                height: 0.5em;
+                margin-top: -0.5em;
+            }
+        }
+        &.md {
+            font-size: 30px;
+        }
+        &.sm {
+            font-size: 24px;
+        }
+    }
+    .material-icons.big {
+        
+    }
+
+    mat-card {
+        background: rgba(255, 255, 255, 0.5);
+        height: calc( 100% - 32px );
+        
+    }
+
+    mat-card-content {
+        /* height: calc( 100% - 150px ); */
+        height: 80%;
+        
+        margin-bottom: 0px;
+    }
+
+    mat-card-header {
+        height: 10%;
+        display: flex;
+        flex: 2;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid rgba(0,0,0, 0.3);
+    }
+
+    mat-card-actions {
+        height: 10%;
+        display: flex;
+        flex: 1;
+        margin-left: 0px;
+        margin-right: 0px;
+        border-top: 1px solid rgba(0,0,0, 0.3);
+    }
+}
+

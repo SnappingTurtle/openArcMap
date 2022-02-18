@@ -1,0 +1,42 @@
+<div id="basemap-tile-view" cdkDrag>
+    <mat-card class="tile-panel">
+        <mat-card-header cdkDragHandle>
+            <div class="material-icons lg">map</div>
+            <mat-card-title>Basemap Options</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="eval-scroller">
+                <button id="scroll-up-arrow" mat-button [disabled]="scrollAtTop == true">
+                    <div class="material-icons lg v-flat" (click)="scrollTiles('up')">keyboard_arrow_up</div>
+                </button>
+                <!-- the tile scroller is the viewport and scrolls the longer content through -->
+                <div #tileScroller class="tile-holder-scrollable" eValDragScroll mousedrag="testObserable$" (isAtBottom)="isAtBottomHandler($event)">
+                <!-- <cdk-virtual-scroll-viewport class="viewport-thing"> -->
+                    <!-- the tile-holder is the container that holds the full length tile list -->
+                    <div #tileHolder id="tile-holder">
+                        <div class="basemap-div" *ngFor="let basemapVO of basemapSourceMap">
+                            <div class="tile-plus-title-div" (click)="selectBasemap(basemapVO)">
+                                <img class="basemap-image" [src]="basemapVO.thumbnailUrl"  height="89" width="133" [attr.draggable]="isDraggable">
+                                <div class="basemap-title">
+                                    {{basemapVO.title}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- </cdk-virtual-scroll-viewport> -->
+                </div>
+                <button id="scroll-down-arrow" mat-button [disabled]="scrollAtBottom == true">
+                    <div class="material-icons lg v-flat" (click)="scrollTiles('down')">keyboard_arrow_down</div>
+                </button>
+            </div>
+            
+        </mat-card-content>
+        <mat-card-actions cdkDragHandle>
+            <button mat-button>
+                <div class="material-icons sm">cancel</div>
+                close
+            </button>
+          </mat-card-actions>
+    </mat-card>
+</div>

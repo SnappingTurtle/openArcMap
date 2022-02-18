@@ -1,0 +1,7 @@
+<div #sidebarcontainer id="sidebar-container" class="sidebarDiv" [style.height.%]="heightPercent"
+  [@leftSidebarSlide]="{value: sidebarDrawerState,
+    params: {sidebarWidth: sidebarWidth, openOffset: openOffset, hideLeftWidth: hideLeftWidth}}"> 
+  
+
+  <ng-content></ng-content>
+</div>

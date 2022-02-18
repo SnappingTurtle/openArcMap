@@ -1,0 +1,14 @@
+<div id="map-div" class="map-container">
+    <eVal-left-sidebar 
+        [sidebarWidth]="sidebarWidth"
+        [openOffset]="openOffset"
+        [hideLeftWidth]="hideLeftWidth"
+        [sidebarDrawerState]="leftSidebarState$ | async">
+
+    </eVal-left-sidebar>
+    <inno-fab-button-bar (leftButtonBarToggleClick)="onButtonBarToggleClick($event)"></inno-fab-button-bar>
+    <inno-basemap-tile-view *ngIf="danny$ | async">
+
+    </inno-basemap-tile-view>
+    <div id="hardBasemapGallery"></div>
+</div>
